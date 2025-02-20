@@ -1,20 +1,18 @@
 import "./App.css";
+import AnimeCard from "./components/AnimeCard";
 
 function App() {
+  const movieNumber = 1;
+
   return (
     <>
-      <Text display="Hello" />
-      <Text display="World" />
+      {movieNumber === 1 ? (
+        <AnimeCard anime={{ title: "First Anime", release_date: "2025" }} />
+      ) : (
+        <AnimeCard anime={{ title: "Second Anime", release_date: "2025" }} />
+      )}
     </>
   );
 }
 
 export default App;
-
-function Text({ display }) {
-  return (
-    <div>
-      <p>{display}</p>
-    </div>
-  );
-}
