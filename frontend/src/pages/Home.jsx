@@ -10,7 +10,9 @@ function Home() {
     { id: 3, title: "Jujutsu Kaisen", release_date: "2020" },
   ];
 
-  function handleSearch() {}
+  function handleSearch() {
+    alert(searchedAnime);
+  }
 
   return (
     <div className="home">
