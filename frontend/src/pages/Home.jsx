@@ -43,6 +43,8 @@ function Home() {
     }
   };
 
+  console.log("searched anime: ", searchedAnime);
+
   return (
     <div className="home">
       <form onSubmit={handleSearch} className="search-form">
@@ -64,10 +66,10 @@ function Home() {
         <div className="loading">Loading...</div>
       ) : (
         <div>
-          <h1 className="">Top 10 Animes</h1>
+          {searchedAnime === "" && <h1>Top 10 Animes</h1>}
           <div className="animes-grid">
             {animes.map((anime) => (
-              <AnimeCard anime={anime} key={anime.id} />
+              <AnimeCard anime={anime} key={anime.mal_id} />
             ))}
           </div>
         </div>
