@@ -5,5 +5,13 @@ export const getPopularAnimes = async () => {
     `${BASE_URL}/top/anime?limit=10&order_by=score&sort=desc`
   );
   const result = await response.json();
-  return result;
+  return result.data;
+};
+
+export const searchAnime = async (query) => {
+  const response = await fetch(
+    `${BASE_URL}/anime?q=${encodeURIComponent(query)}`
+  );
+  const result = await response.json();
+  return result.data;
 };
