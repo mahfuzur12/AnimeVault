@@ -3,15 +3,10 @@ import { createContext, useState, useEffect } from "react";
 const AnimeContext = createContext();
 
 export const AnimeProvider = ({ children }) => {
-  const [favourites, setFavourites] = useState([]);
-
-  useEffect(() => {
+  const [favourites, setFavourites] = useState(() => {
     const storedFavourites = localStorage.getItem("favourites");
-
-    if (storedFavourites) {
-      setFavourites(JSON.parse(storedFavourites));
-    }
-  }, []);
+    return storedFavourites ? JSON.parse(storedFavourites) : [];
+  });
 
   useEffect(() => {
     localStorage.setItem("favourites", JSON.stringify(favourites));
