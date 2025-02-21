@@ -1,7 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/favourites", "destination": "/index.html" },
-    { "source": "/favorites", "destination": "/index.html" },
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
