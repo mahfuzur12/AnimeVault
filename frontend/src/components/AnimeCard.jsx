@@ -8,7 +8,7 @@ function AnimeCard({ anime }) {
   return (
     <div className="anime-card">
       <div className="anime-poster">
-        <img src={anime.url} alt={anime.title} />
+        <img src={anime.images.jpg.large_image_url} alt={anime.title} />
         <div className="anime-overlay">
           <button className="favourite-btn" onClick={handleFavouriteClick}>
             ♡
@@ -17,7 +17,7 @@ function AnimeCard({ anime }) {
       </div>
       <div className="anime-info">
         <h3>{anime.title}</h3>
-        <p>{anime.release_date}</p>
+        <p>{anime.aired.string}</p>
       </div>
     </div>
   );

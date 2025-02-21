@@ -1,19 +1,47 @@
 import AnimeCard from "../components/AnimeCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../css/Home.css";
+import { getPopularAnimes, searchAnime } from "../services/api";
 
 function Home() {
   const [searchedAnime, setSearchedAnime] = useState("");
+  const [animes, setAnimes] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  const animes = [
-    { id: 1, title: "Hunter x Hunter", release_date: "2011" },
-    { id: 2, title: "Naruto", release_date: "2003" },
-    { id: 3, title: "Jujutsu Kaisen", release_date: "2020" },
-  ];
+  useEffect(() => {
+    const loadPopularAnimes = async () => {
+      try {
+        const popularAnimes = await getPopularAnimes();
+        setAnimes(popularAnimes);
+      } catch (error) {
+        console.log(error);
+        setError("Failed to load animes");
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  function handleSearch() {
-    alert(searchedAnime);
-  }
+    loadPopularAnimes();
+  }, []);
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    if (!searchedAnime.trim()) return;
+    if (loading) return;
+
+    setLoading(true);
+    try {
+      const searchResults = await searchAnime(searchedAnime);
+      setAnimes(searchResults);
+      setError(null);
+    } catch (error) {
+      console.log(error);
+      setError("Failed to search anime");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="home">
@@ -30,11 +58,17 @@ function Home() {
         </button>
       </form>
 
-      <div className="animes-grid">
-        {animes.map((anime) => (
-          <AnimeCard anime={anime} key={anime.id} />
-        ))}
-      </div>
+      {error && <div className="error-message">{error}</div>}
+
+      {loading ? (
+        <div className="loading">Loading...</div>
+      ) : (
+        <div className="animes-grid">
+          {animes.map((anime) => (
+            <AnimeCard anime={anime} key={anime.id} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
