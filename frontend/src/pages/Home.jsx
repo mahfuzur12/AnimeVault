@@ -43,8 +43,6 @@ function Home() {
     }
   };
 
-  console.log("searched anime: ", searchedAnime);
-
   return (
     <div className="home">
       <form onSubmit={handleSearch} className="search-form">
