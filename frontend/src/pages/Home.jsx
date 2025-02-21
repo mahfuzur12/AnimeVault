@@ -63,10 +63,13 @@ function Home() {
       {loading ? (
         <div className="loading">Loading...</div>
       ) : (
-        <div className="animes-grid">
-          {animes.map((anime) => (
-            <AnimeCard anime={anime} key={anime.id} />
-          ))}
+        <div>
+          <h1 className="">Top 10 Animes</h1>
+          <div className="animes-grid">
+            {animes.map((anime) => (
+              <AnimeCard anime={anime} key={anime.id} />
+            ))}
+          </div>
         </div>
       )}
     </div>
