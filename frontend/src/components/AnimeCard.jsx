@@ -1,3 +1,5 @@
+import "../css/AnimeCard.css";
+
 function AnimeCard({ anime }) {
   function handleFavouriteClick() {
     alert("Clicked!");
