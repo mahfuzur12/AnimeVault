@@ -31,7 +31,7 @@ Keep track of your favourite animes by adding them to your favourites list.
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/animevault.git
+git clone https://github.com/mahfuzur12/animevault.git
 ```
 
 2. Navigate to the project directory:
