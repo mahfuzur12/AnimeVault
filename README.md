@@ -19,24 +19,25 @@ Keep track of your favourite animes by adding them to your favourites list.
 - **useState**: Managing state within components.
 - **Page Routing**: Using React Router for navigation between different pages.
 - **CSS Styling**: Applying styles using standard CSS (not Tailwind).
-- **Calling APIs**: Fetching data from external APIs to populate the app with anime data.
+- **Calling APIs**: The app uses the [Jikan API](https://jikan.moe/) to fetch anime data.
 - **useEffect**: Handling side effects like fetching data when the component mounts.
 - **Contexts**: Managing global variables (data that can be accessed across multiple components). Contexts allow you to share state or functions globally in your app, without passing props down manually at every level. This can be useful for things like authentication, themes, or settings that need to be accessed across multiple pages or components.
 
 ## 🛠️ Technologies Used
 - **Frontend:** React, Vite
 - **CSS:** Standard CSS (no Tailwind)
+- **API:** [Jikan API](https://jikan.moe/)
 
 ## 📦 Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/mahfuzur12/animevault.git
+git clone https://github.com/mahfuzur12/AnimeVault.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd animevault
+cd frontend
 ```
 
 3. Install dependencies:
