@@ -21,8 +21,7 @@ Keep track of your favourite animes by adding them to your favourites list.
 - **CSS Styling**: Applying styles using standard CSS (not Tailwind).
 - **Calling APIs**: The app uses the [Jikan API](https://jikan.moe/) to fetch anime data.
 - **useEffect**: Handling side effects like fetching data when the component mounts.
-- **Contexts**: Managing global variables (data that can be accessed across multiple components). Contexts allow you to share state or functions globally in your app, without passing props down manually at every level. This can be useful for things like authentication, themes, or settings that need to be accessed across multiple pages or components.
-
+- **Contexts**: Managing global variables (data that can be accessed across multiple components). Contexts allow you to share state or functions globally in your app, without passing props down manually at every level.
 ## 🛠️ Technologies Used
 - **Frontend:** React, Vite
 - **CSS:** Standard CSS (no Tailwind)
